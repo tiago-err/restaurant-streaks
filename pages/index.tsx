@@ -1,6 +1,8 @@
 import type {NextPage} from "next";
 import Head from "next/head";
 import Image from "next/image";
+import {useContext, useEffect} from "react";
+import {AuthContext} from "../firebase/context";
 
 const Card = (props: {title: string; href: string; text: string}) => (
 	<a
@@ -12,6 +14,12 @@ const Card = (props: {title: string; href: string; text: string}) => (
 );
 
 const Home: NextPage = () => {
+	const {user} = useContext(AuthContext);
+
+	useEffect(() => {
+		console.log({user});
+	}, [user]);
+
 	return (
 		<div className="py-0 px-8">
 			<Head>
