@@ -3,7 +3,7 @@ import QRCode from "react-qr-code";
 import {useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
 
-interface Props extends Restaurant {
+export interface Props extends Restaurant {
 	userAmount: number;
 	qrCode: string;
 }
