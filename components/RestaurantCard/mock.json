@@ -1,0 +1,18 @@
+{
+    "tomatino": {
+        "id": "Cx7BBLIecyY17usIubOh",
+        "bgColor": "#DC2626",
+        "color": "white",
+        "name": "Tomatino",
+        "rewardAmount": 10,
+        "userAmount": 9
+    },
+    "h3": {
+        "id": "Cx7BBLIecyY17usIubOh",
+        "bgColor": "#1B9ED4",
+        "color": "white",
+        "name": "H3 - New Hamburgology",
+        "rewardAmount": 10,
+        "userAmount": 9
+    }
+}
