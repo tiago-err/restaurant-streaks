@@ -2,6 +2,7 @@ import React from "react";
 import {ComponentStory, ComponentMeta} from "@storybook/react";
 import Component from ".";
 import {COLORS} from "../../public/shared/colors";
+import mock from "./mock.json";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -16,8 +17,12 @@ const Template: ComponentStory<typeof Component> = (args) => <Component {...args
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-	color: COLORS.blue,
-	total: 10,
-	current: 8,
-};
+Primary.args = mock.tomatino;
+
+export const Full = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+Full.args = {...mock.tomatino, userAmount: 10};
+
+export const H3 = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+H3.args = mock.h3;

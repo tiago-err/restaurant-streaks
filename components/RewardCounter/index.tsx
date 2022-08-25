@@ -1,19 +1,32 @@
 import translations, {COLORS} from "../../public/shared/colors";
+import {mdiCheckboxMarkedOutline, mdiCheckboxBlankOutline, mdiCheckboxBlankBadgeOutline} from "@mdi/js";
+import {Icon} from "@mdi/react";
+import {motion} from "framer-motion";
 
 interface Props {
-	color: COLORS;
-	total: number;
-	current: number;
+	restaurantColor: string;
+	rewardAmount: number;
+	userAmount: number;
 }
 
-export default function RewardCounter({total, current, color}: Props) {
+export default function RewardCounter(props: Props) {
 	return (
-		<span className="font-semibold">
-			Just{" "}
-			<span className={`${translations[color].text} font-bold text-xl`}>
-				{total - current} more meal{total - current > 1 && "s"}
-			</span>{" "}
-			to receive your reward!
-		</span>
+		<div className="grid grid-cols-5 w-full gap-6">
+			{[...Array(props.rewardAmount)].map((_, index) => (
+				<motion.div animate={{scale: 1, opacity: 1}} initial={{scale: 0, opacity: 0}} transition={{duration: 0.15 * (index + 1)}} key={index}>
+					<Icon
+						color={props.restaurantColor}
+						size={2}
+						path={
+							props.userAmount > index
+								? mdiCheckboxMarkedOutline
+								: index === props.rewardAmount - 1
+								? mdiCheckboxBlankBadgeOutline
+								: mdiCheckboxBlankOutline
+						}
+					/>
+				</motion.div>
+			))}
+		</div>
 	);
 }

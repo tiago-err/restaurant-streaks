@@ -5,7 +5,8 @@
         "color": "white",
         "name": "Tomatino",
         "rewardAmount": 10,
-        "userAmount": 9
+        "userAmount": 9,
+        "qrCode": "tomatino"
     },
     "h3": {
         "id": "Cx7BBLIecyY17usIubOh",
@@ -13,6 +14,7 @@
         "color": "white",
         "name": "H3 - New Hamburgology",
         "rewardAmount": 10,
-        "userAmount": 9
+        "userAmount": 9,
+        "qrCode": "h3"
     }
 }

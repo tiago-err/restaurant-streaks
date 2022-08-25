@@ -1,0 +1,12 @@
+{
+    "tomatino": {
+        "restaurantColor": "#DC2626",
+        "rewardAmount": 10,
+        "userAmount": 9
+    },
+    "h3": {
+        "restaurantColor": "#1B9ED4",
+        "rewardAmount": 10,
+        "userAmount": 9
+    }
+}
