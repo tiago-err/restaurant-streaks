@@ -11,7 +11,7 @@ interface Props {
 
 export default function RewardCounter(props: Props) {
 	return (
-		<div className="grid grid-cols-5 w-full gap-6">
+		<div className="grid grid-cols-5 place-items-center w-full gap-6">
 			{[...Array(props.rewardAmount)].map((_, index) => (
 				<motion.div animate={{scale: 1, opacity: 1}} initial={{scale: 0, opacity: 0}} transition={{duration: 0.15 * (index + 1)}} key={index}>
 					<Icon
