@@ -1,6 +1,6 @@
 import {Restaurant} from "../../interfaces";
 import QRCode from "react-qr-code";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
 
 export interface Props extends Restaurant {
@@ -10,6 +10,11 @@ export interface Props extends Restaurant {
 
 export default function RestaurantCard(props: Props) {
 	const [showQRCode, setShowQRCode] = useState(false);
+	const [hasBeenClicked, setHasBeenClicked] = useState(false);
+
+	useEffect(() => {
+		if (showQRCode) setHasBeenClicked(true);
+	}, [showQRCode]);
 
 	const computeIndicatorColor = () => {
 		return props.rewardAmount - props.userAmount === 0 ? "bg-success border-success" : "bg-primary border-primary";
@@ -23,7 +28,7 @@ export default function RestaurantCard(props: Props) {
 				whileTap={{scale: 0.8}}
 				onClick={() => setShowQRCode((prev) => !prev)}>
 				{!showQRCode && (
-					<>
+					<div className="flex flex-col w-full">
 						<span
 							className={`indicator-item badge text-white font-semibold text-lg rounded-xl w-9 h-9 mr-2 mt-2 ${computeIndicatorColor()}`}>
 							{props.rewardAmount - props.userAmount === 0 ? "!" : props.rewardAmount - props.userAmount}
@@ -36,7 +41,8 @@ export default function RestaurantCard(props: Props) {
 							style={{color: props.color, backgroundColor: props.bgColor}}>
 							<h2 className="font-bold text-xl">{props.name}</h2>
 						</motion.div>
-					</>
+						{!hasBeenClicked && <span className="font-light italic text-sm">Click to show the QR Code</span>}
+					</div>
 				)}
 				{showQRCode && (
 					<motion.div
