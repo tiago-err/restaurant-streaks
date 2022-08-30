@@ -25,5 +25,14 @@
         "rewardAmount": 10,
         "userAmount": 6,
         "qrCode": "mc"
+    },
+    {
+        "id": "Cx7BBLIecyD171sIubOh",
+        "bgColor": "#991B1B",
+        "color": "white",
+        "name": "Pizza Hut",
+        "rewardAmount": 10,
+        "userAmount": 6,
+        "qrCode": "pz"
     }
 ]

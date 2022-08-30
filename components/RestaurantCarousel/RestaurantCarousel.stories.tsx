@@ -4,6 +4,9 @@ import Component from ".";
 import {COLORS} from "../../public/shared/colors";
 import mock from "./mock.json";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
 	title: "Example/Restaurant Carousel",

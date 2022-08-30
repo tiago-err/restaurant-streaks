@@ -1,6 +1,8 @@
 import "../styles/globals.css";
-import "swiper/css";
-import "swiper/css/pagination";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import type {AppProps} from "next/app";
 import AuthProvider from "../firebase/AuthContext";
 import StoreProvider from "../firebase/StoreContext";
