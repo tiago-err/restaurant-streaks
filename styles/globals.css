@@ -27,3 +27,11 @@ a {
 		background: black;
 	}
 }
+
+.slick-slide > div {
+	display: flex;
+}
+
+.slick-slide > div > div {
+	width: auto !important;
+}

@@ -13,3 +13,8 @@ export interface UserRestaurant {
 	qrCode: string;
 	userAmount: number;
 }
+
+export interface CompleteRestaurant extends Restaurant {
+	qrCode: string;
+	userAmount: number;
+}

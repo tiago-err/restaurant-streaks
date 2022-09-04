@@ -6,7 +6,7 @@ import {AnimatePresence, motion} from "framer-motion";
 export interface Props extends Restaurant {
 	userAmount: number;
 	qrCode: string;
-	isClickable?: boolean;
+	onClick?: () => void;
 }
 
 export default function RestaurantCard(props: Props) {
@@ -23,11 +23,7 @@ export default function RestaurantCard(props: Props) {
 
 	return (
 		<AnimatePresence>
-			<motion.div
-				className="indicator text-center"
-				whileHover={{scale: 1.1}}
-				whileTap={{scale: 0.8}}
-				onClick={props.isClickable ? () => setShowQRCode((prev) => !prev) : null}>
+			<motion.div className="indicator text-center" whileHover={{scale: 1.1}} whileTap={{scale: 0.8}} onClick={props.onClick}>
 				{!showQRCode && (
 					<div className="flex flex-col w-full">
 						<span
