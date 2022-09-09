@@ -19,9 +19,7 @@ const Home: NextPage = () => {
 	const [qrModalOpen, setQrModalOpen] = useState(false);
 
 	useEffect(() => {
-		if (!user) {
-			Router.push("/login");
-		}
+		if (!user) Router.push("/login");
 	}, [user]);
 
 	useEffect(() => {
@@ -30,7 +28,7 @@ const Home: NextPage = () => {
 
 	const completeRestaurant = (restaurant: Restaurant): CompleteRestaurant => {
 		const userRestaurant = getUserRestaurantFromRestaurantID(restaurant.id);
-		return {...restaurant, qrCode: userRestaurant.qrCode ?? "", userAmount: userRestaurant.userAmount ?? 0};
+		return {...restaurant, qrCode: userRestaurant?.qrCode || "", userAmount: userRestaurant?.userAmount || 0};
 	};
 
 	const getUserRestaurantFromRestaurantID = (id: string) => {
@@ -45,7 +43,7 @@ const Home: NextPage = () => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<main className="h-screen w-full lg:w-5/12 flex flex-col items-center justify-center bg-white dark:bg-gray-800 lg:rounded-xl drop-shadow-xl">
+			<main className="h-screen w-full lg:w-5/12 flex flex-col items-center justify-center bg-white dark:bg-gray-800 lg:rounded-xl">
 				<div className="p-8 w-full mb-4">
 					<Header user={user} />
 				</div>
@@ -65,6 +63,12 @@ const Home: NextPage = () => {
 				</div>
 				<QrCodeModal isOpen={qrModalOpen} onClose={() => setQrModalOpen(false)} qrCode={selectedRestaurant?.qrCode || "qrCode"} />
 			</main>
+
+			<footer className="w-full bg-white">
+				<div className="border-t-2 border-gray-200 mx-4 p-4 h-full flex items-center justify-center">
+					<span className="font-thin text-xs">Developed by Tiago Ribeiro</span>
+				</div>
+			</footer>
 		</div>
 	);
 };

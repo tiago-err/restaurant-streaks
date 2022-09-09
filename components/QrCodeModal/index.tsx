@@ -36,7 +36,7 @@ export default function QrCodeModal({isOpen, onClose, qrCode}: Props) {
 							<Dialog.Panel
 								onClick={onClose}
 								className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-								<div className="w-full flex items-center justify-center py-6">
+								<div className="w-full flex items-center justify-center py-10">
 									<QRCode value={qrCode} />
 								</div>
 							</Dialog.Panel>
